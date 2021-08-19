@@ -18,7 +18,7 @@
                         <option value="" selected="selected"></option>
                         <option th:each="name: ${T(by.nurvazarov.generalnasa.model.product.lizard.LizardsEnum).values()}"
                                 th:value="${name}"
-                                th:text="${name}">
+                                th:text="${name.getRusName()}">
                         </option>
                     </select>
                 </div>
@@ -54,6 +54,11 @@
                 <div class="mb-3">
                     <label for="priceLizard" class="col-form-label">Цена:</label>
                     <input type="number" class="form-control" id="priceLizard" name="priceLizard">
+                </div>
+
+                <div class="mb-3">
+                    <label for="descriptionLizard" class="col-form-label">Описание:</label>
+                    <input type="text" class="form-control" id="descriptionLizard" name="descriptionLizard">
                 </div>
 
                 <div class="mb-3">
