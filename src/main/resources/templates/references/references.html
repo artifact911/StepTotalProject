@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:include="fragments/header::head(~{::script}, ~{})">
+    <script type="text/javascript" th:src="@{/js/references.js}"></script>
+</head>
+<body>
+<header>
+    <div th:replace="fragments/nav-bar :: nav_bar"></div>
+</header>
+<main>
+    <div class="container-fluid mt-1">
+        <ul class="nav nav-tabs" id="referencesTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link" id="spider-tab" th:href="@{/references/spiders}" data-bs-toggle="tab"
+                   data-bs-target="#spiderTab"
+                   role="tab">Пауки</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="snake-tab" th:href="@{/references/snakes}" data-bs-toggle="tab"
+                   data-bs-target="#snakeTab"
+                   role="tab">Змеи</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="scorpion-tab" th:href="@{/references/scorpions}" data-bs-toggle="tab"
+                   data-bs-target="#scorpionTab"
+                   role="tab">Скорпионы</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="lizard-tab" th:href="@{/references/lizards}" data-bs-toggle="tab"
+                   data-bs-target="#lizardTab"
+                   role="tab">Ящерицы</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="insect-tab" th:href="@{/references/insects}" data-bs-toggle="tab"
+                   data-bs-target="#insectTab"
+                   role="tab">Насекомые</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="equipment-tab" th:href="@{/references/equipments}" data-bs-toggle="tab"
+                   data-bs-target="#equipmentTab"
+                   role="tab">Сопутствующие товары</a>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade" id="spiderTab" role="tabpanel"></div>
+            <div class="tab-pane fade" id="snakeTab" role="tabpanel"></div>
+            <div class="tab-pane fade" id="scorpionTab" role="tabpanel"></div>
+            <div class="tab-pane fade" id="lizardTab" role="tabpanel"></div>
+            <div class="tab-pane fade" id="insectTab" role="tabpanel"></div>
+            <div class="tab-pane fade" id="equipmentTab" role="tabpanel"></div>
+        </div>
+    </div>
+</main>
+<footer th:include="fragments/footer :: footer"></footer>
+</body>
+</html>

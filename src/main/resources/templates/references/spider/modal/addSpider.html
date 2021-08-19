@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title">Создание паука</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form th:action="@{/references/spiders/saveSpider}" method="post" enctype="multipart/form-data" id="add_spider">
+
+                <div class="mb-3">
+                    <label for="spider-name" class="col-form-label">Название:</label>
+                    <select name="name" class="form-select" id="spider-name" required>
+                        <option value="" selected="selected"></option>
+                        <option th:each="name: ${T(by.nurvazarov.generalnasa.model.product.spider.SpidersEnum).values()}"
+                                th:value="${name}"
+                                th:text="${name.getRusName()}">
+                        </option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="spider-type" class="col-form-label">Тип:</label>
+                    <select name="type" class="form-select" id="spider-type" required>
+                        <option value="" selected="selected"></option>
+                        <option th:each="type: ${T(by.nurvazarov.generalnasa.model.product.spider.Type).values()}"
+                                th:value="${type}"
+                                th:text="${type.getRusText()}">
+                        </option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="spider-toxic" class="col-form-label">Токсичность:</label>
+                    <select name="toxic" class="form-select" id="spider-toxic" required>
+                        <option value="" selected="selected"></option>
+                        <option th:each="toxic: ${T(by.nurvazarov.generalnasa.model.product.enums.Toxic).values()}"
+                                th:value="${toxic}"
+                                th:text="${toxic.getRusText()}">
+                        </option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="spider-difficult" class="col-form-label">Сложность:</label>
+                    <select name="difficult" class="form-select" id="spider-difficult" required>
+                        <option value="" selected="selected"></option>
+                        <option th:each="difficult: ${T(by.nurvazarov.generalnasa.model.product.enums.Difficulty).values()}"
+                                th:value="${difficult}"
+                                th:text="${difficult.getRusText()}">
+                        </option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="spider-danger" class="col-form-label">Опасность:</label>
+                    <select name="danger" class="form-select" id="spider-danger" required>
+                        <option value="" selected="selected"></option>
+                        <option th:each="danger: ${T(by.nurvazarov.generalnasa.model.product.enums.Danger).values()}"
+                                th:value="${danger}"
+                                th:text="${danger.getRusText()}">
+                        </option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="spider-sex" class="col-form-label">Пол:</label>
+                    <select name="sex" class="form-select" id="spider-sex" required>
+                        <option value="" selected="selected"></option>
+                        <option th:each="sex: ${T(by.nurvazarov.generalnasa.model.product.enums.Sex).values()}"
+                                th:value="${sex}"
+                                th:text="${sex.getRusText()}">
+                        </option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="quantitySpiders" class="col-form-label">В наличии:</label>
+                    <input type="number" class="form-control" id="quantitySpiders" name="quantitySpiders">
+                </div>
+
+                <div class="mb-3">
+                    <label for="priceSpider" class="col-form-label">Цена:</label>
+                    <input type="number" class="form-control" id="priceSpider" name="priceSpider">
+                </div>
+
+                <div class="mb-3">
+                    <label for="descriptionSpider" class="col-form-label">Описание:</label>
+                    <input type="text" class="form-control" id="descriptionSpider" name="descriptionSpider">
+                </div>
+
+                <div class="mb-3">
+                    <label for="formFile" class="form-label">Изображение</label>
+                    <input class="form-control" type="file" id="formFile" name="maintenanceFile">
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+</html>

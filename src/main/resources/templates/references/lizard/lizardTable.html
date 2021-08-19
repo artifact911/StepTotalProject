@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<table class="table">
+    <thead class="table-secondary">
+    <tr>
+        <th scope="col">Название</th>
+        <th scope="col">Сложность</th>
+        <th scope="col">Пол</th>
+        <th scope="col">В наличии</th>
+        <th scope="col">Цена</th>
+        <th scope="col">Операции</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="lizard : ${lizards}" th:object="${lizard}">
+        <td th:text="*{name.getRusName()}"></td>
+        <td th:text="*{difficulty.getRusText()}"></td>
+        <td th:text="*{sex.getRusText()}"></td>
+        <td th:text="*{quantity}"></td>
+        <td th:text="*{price}"></td>
+        <td>
+            <a th:href="@{references/lizards/edit/(pid=*{pid})}" class="btn btn-warning editBtn">
+                Edit
+            </a>
+            <a th:href="@{references/lizards/delete/(pid=*{pid})}" class="btn btn-danger deleteBtn">
+                Delete
+            </a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</html>

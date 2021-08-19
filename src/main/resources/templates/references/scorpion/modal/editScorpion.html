@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Редактирование</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form th:action="@{references/scorpions/updateScorpion}" method="POST" th:object="${scorpion}"
+                  id="edit_scorpion">
+                <input type="hidden" name="pid" th:field="*{pid}" id="edit-scorpion-id">
+
+                <div class="mb-1 w-25 h-25">
+                    <img class="card-img" th:src="@{references/scorpions/image(pid=${scorpion.pid})}"/>
+                </div>
+
+                <div class="mb-3">
+                    <label for="edit-scorpion-name" class="col-form-label">Название:</label>
+                    <select name="name" class="form-select" id="edit-scorpion-name" required>
+                        <option value="" selected="selected"></option>
+                        <option th:each="name: ${T(by.nurvazarov.generalnasa.model.product.spider.SpidersEnum).values()}"
+                                th:value="${name}"
+                                th:text="${name.getRusName()}">
+                        </option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="edit-scorpion-toxic" class="col-form-label">Токсичность:</label>
+                    <select name="toxic" class="form-select" id="edit-scorpion-toxic" required>
+                        <option value="" selected="selected"></option>
+                        <option th:each="toxic: ${T(by.nurvazarov.generalnasa.model.product.enums.Toxic).values()}"
+                                th:value="${toxic}"
+                                th:text="${toxic.getRusText()}">
+                        </option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="edit-scorpion-danger" class="col-form-label">Опасность:</label>
+                    <select name="danger" class="form-select" id="edit-scorpion-danger" required>
+                        <option value="" selected="selected"></option>
+                        <option th:each="danger: ${T(by.nurvazarov.generalnasa.model.product.enums.Danger).values()}"
+                                th:value="${danger}"
+                                th:text="${danger.getRusText()}">
+                        </option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="edit-quantityScorpions" class="col-form-label">В наличии:</label>
+                    <input type="number" class="form-control" id="edit-quantityScorpions" name="edit-quantityScorpions">
+                </div>
+
+                <div class="mb-3">
+                    <label for="edit-priceScorpion" class="col-form-label">Цена:</label>
+                    <input type="number" class="form-control" id="edit-priceScorpion" name="edit-priceScorpion">
+                </div>
+
+                <div class="mb-3">
+                    <label for="edit-descriptionScorpion" class="col-form-label">Описание:</label>
+                    <input type="text" class="form-control" id="edit-descriptionScorpion" name="edit-descriptionScorpion">
+                </div>
+
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<div th:fragment="alert" id="alert" role="alert"
+     th:if="${message}" th:text="${message}"
+     th:onclick="alert()" th:class="${'alert ' + alertClass}">
+    <a href="#" class="close" data-dismiss="alert"
+       aria-label="close">&times;</a>
+</div>
+</html>

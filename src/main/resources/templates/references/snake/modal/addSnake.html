@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title">Создание змеи</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form th:action="@{references/snakes/saveSnake}" method="post" enctype="multipart/form-data" id="add_snake">
+
+                <div class="mb-3">
+                    <label for="snake-name" class="col-form-label">Название:</label>
+                    <select name="name" class="form-select" id="snake-name" required>
+                        <option value="" selected="selected"></option>
+                        <option th:each="name: ${T(by.nurvazarov.generalnasa.model.product.snake.SnakesEnum).values()}"
+                                th:value="${name}"
+                                th:text="${name.getRusName()}">
+                        </option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="snake-danger" class="col-form-label">Опасность:</label>
+                    <select name="danger" class="form-select" id="snake-danger" required>
+                        <option value="" selected="selected"></option>
+                        <option th:each="danger: ${T(by.nurvazarov.generalnasa.model.product.enums.Danger).values()}"
+                                th:value="${danger}"
+                                th:text="${danger.getRusText()}">
+                        </option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="snake-sex" class="col-form-label">Пол:</label>
+                    <select name="sex" class="form-select" id="snake-sex" required>
+                        <option value="" selected="selected"></option>
+                        <option th:each="sex: ${T(by.nurvazarov.generalnasa.model.product.enums.Sex).values()}"
+                                th:value="${sex}"
+                                th:text="${sex.getRusText()}">
+                        </option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="quantitySnakes" class="col-form-label">В наличии:</label>
+                    <input type="number" class="form-control" id="quantitySnakes" name="quantitySnakes">
+                </div>
+
+                <div class="mb-3">
+                    <label for="priceSnake" class="col-form-label">Цена:</label>
+                    <input type="number" class="form-control" id="priceSnake" name="priceSnake">
+                </div>
+
+                <div class="mb-3">
+                    <label for="descriptionSnake" class="col-form-label">Описание:</label>
+                    <input type="text" class="form-control" id="descriptionSnake" name="descriptionSnake">
+                </div>
+
+                <div class="mb-3">
+                    <label for="formFile" class="form-label">Изображение</label>
+                    <input class="form-control" type="file" id="formFile" name="maintenanceFile">
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+</html>
