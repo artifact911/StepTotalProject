@@ -36,10 +36,10 @@ public class EquipmentController {
     public String getAll(Model model) {
         List<Equipment> equipments = equipmentService.getEquipments();
         model.addAttribute("equipments", equipments);
-        return "references/insect/insect";
+        return "references/equipment/equipment";
     }
 
-    @GetMapping("/addInsect")
+    @GetMapping("/addEquipment")
     public String addEquipment(Model model) {
         try {
             model.addAttribute("equipment", new Equipment());
