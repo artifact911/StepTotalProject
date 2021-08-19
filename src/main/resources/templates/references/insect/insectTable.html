@@ -11,7 +11,7 @@
     </tr>
     </thead>
     <tbody>
-    <tr th:each="insect : ${insect}" th:object="${insect}">
+    <tr th:each="insect : ${insects}" th:object="${insect}">
         <td th:text="*{name.getRusName()}"></td>
         <td th:text="*{quantity}"></td>
         <td th:text="*{price}"></td>
