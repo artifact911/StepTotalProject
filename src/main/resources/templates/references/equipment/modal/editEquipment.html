@@ -8,94 +8,35 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-            <form th:action="@{references/spiders/updateSpider}" method="POST" th:object="${spider}" id="edit_spider">
-                <input type="hidden" name="pid" th:field="*{pid}" id="edit-spider-id">
+            <form th:action="@{references/equipments/updateEquipment}" method="POST" th:object="${equipment}"
+                  id="edit_equipment">
+                <input type="hidden" name="pid" th:field="*{pid}" id="edit-equipment-id">
 
                 <div class="mb-1 w-25 h-25">
-                    <img class="card-img" th:src="@{references/spiders/image(pid=${spider.pid})}" />
+                    <img class="card-img" th:src="@{references/equipments/image(pid=${equipment.pid})}"/>
                 </div>
 
                 <div class="mb-3">
-                    <label for="edit-spider-name" class="col-form-label">Название:</label>
-                    <select name="name" class="form-select" id="edit-spider-name" required>
-                        <option value="" selected="selected"></option>
-                        <option th:each="name: ${T(by.nurvazarov.generalnasa.model.product.spider.SpidersEnum).values()}"
-                                th:value="${name}"
-                                th:text="${name}">
-                        </option>
-                    </select>
+                    <label for="edit-name-equipment" class="col-form-label">Название</label>
+                    <input type="text" class="form-control" id="edit-name-equipment" name="edit-name-equipment">
                 </div>
 
                 <div class="mb-3">
-                    <label for="edit-spider-type" class="col-form-label">Тип:</label>
-                    <select name="type" class="form-select" id="edit-spider-type" required>
-                        <option value="" selected="selected"></option>
-                        <option th:each="type: ${T(by.nurvazarov.generalnasa.model.product.spider.SpidersEnum).values()}"
-                                th:value="${type}"
-                                th:text="${type.getType()}">
-                        </option>
-                    </select>
+                    <label for="edit-quantity-equipment" class="col-form-label">В наличии:</label>
+                    <input type="number" class="form-control" id="edit-quantity-equipment"
+                           name="edit-quantity-equipment">
                 </div>
 
                 <div class="mb-3">
-                    <label for="edit-spider-toxic" class="col-form-label">Токсичность:</label>
-                    <select name="toxic" class="form-select" id="edit-spider-toxic" required>
-                        <option value="" selected="selected"></option>
-                        <option th:each="toxic: ${T(by.nurvazarov.generalnasa.model.product.spider.SpidersEnum).values()}"
-                                th:value="${toxic}"
-                                th:text="${toxic.getToxic()}">
-                        </option>
-                    </select>
+                    <label for="edit-priceEquipment" class="col-form-label">Цена:</label>
+                    <input type="number" class="form-control" id="edit-priceEquipment" name="edit-priceEquipment">
                 </div>
 
                 <div class="mb-3">
-                    <label for="edit-spider-difficult" class="col-form-label">Сложность:</label>
-                    <select name="difficult" class="form-select" id="edit-spider-difficult" required>
-                        <option value="" selected="selected"></option>
-                        <option th:each="difficult: ${T(by.nurvazarov.generalnasa.model.product.spider.SpidersEnum).values()}"
-                                th:value="${difficult}"
-                                th:text="${difficult.getDifficulty()}">
-                        </option>
-                    </select>
+                    <label for="edit-descriptionEquipment" class="col-form-label">Описание:</label>
+                    <input type="text" class="form-control" id="edit-descriptionEquipment"
+                           name="edit-descriptionEquipment">
                 </div>
-
-                <div class="mb-3">
-                    <label for="edit-spider-danger" class="col-form-label">Опасность:</label>
-                    <select name="danger" class="form-select" id="edit-spider-danger" required>
-                        <option value="" selected="selected"></option>
-                        <option th:each="danger: ${T(by.nurvazarov.generalnasa.model.product.spider.SpidersEnum).values()}"
-                                th:value="${danger}"
-                                th:text="${danger.getDanger()}">
-                        </option>
-                    </select>
-                </div>
-
-                <div class="mb-3">
-                    <label for="edit-spider-sex" class="col-form-label">Пол:</label>
-                    <select name="sex" class="form-select" id="edit-spider-sex" required>
-                        <option value="" selected="selected"></option>
-                        <option th:each="sex: ${T(by.nurvazarov.generalnasa.model.product.spider.SpidersSex).values()}"
-                                th:value="${sex}"
-                                th:text="${sex}">
-                        </option>
-                    </select>
-                </div>
-
-                <div class="mb-3">
-                    <label for="edit-quantitySpiders" class="col-form-label">В наличии:</label>
-                    <input type="number" class="form-control" id="edit-quantitySpiders" name="edit-quantitySpiders">
-                </div>
-
-                <div class="mb-3">
-                    <label for="edit-priceSpider" class="col-form-label">Цена:</label>
-                    <input type="number" class="form-control" id="edit-priceSpider" name="edit-priceSpider">
-                </div>
-
-                <div class="mb-3">
-                    <label for="edit-descriptionSpider" class="col-form-label">Описание:</label>
-                    <input type="text" class="form-control" id="edit-descriptionSpider" name="edit-descriptionSpider">
-                </div>
-
 
 
                 <div class="modal-footer">
