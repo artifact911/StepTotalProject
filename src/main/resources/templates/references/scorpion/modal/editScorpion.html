@@ -8,12 +8,12 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-            <form th:action="@{references/scorpions/updateScorpion}" method="POST" th:object="${scorpion}"
+            <form th:action="@{/references/scorpions/updateScorpion}" method="POST" th:object="${scorpion}"
                   id="edit_scorpion">
                 <input type="hidden" name="pid" th:field="*{pid}" id="edit-scorpion-id">
 
                 <div class="mb-1 w-25 h-25">
-                    <img class="card-img" th:src="@{references/scorpions/image(pid=${scorpion.pid})}"/>
+                    <img class="card-img" th:src="@{/references/scorpions/image(pid=${scorpion.pid})}"/>
                 </div>
 
                 <div class="mb-3">

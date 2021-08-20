@@ -8,11 +8,11 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-            <form th:action="@{references/spiders/updateSpider}" method="POST" th:object="${spider}" id="edit_spider">
+            <form th:action="@{/references/spiders/updateSpider}" method="POST" th:object="${spider}" id="edit_spider">
                 <input type="hidden" name="pid" th:field="*{pid}" id="edit-spider-id">
 
                 <div class="mb-1 w-25 h-25">
-                    <img class="card-img" th:src="@{references/spiders/image(pid=${spider.pid})}" />
+                    <img class="card-img" th:src="@{/references/spiders/image(pid=${spider.pid})}" />
                 </div>
 
                 <div class="mb-3">
