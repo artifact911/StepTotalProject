@@ -35,7 +35,7 @@ public class NavigationController {
     @GetMapping("/orders")
     @PreAuthorize("hasAnyAuthority('ADMIN', 'ASSISTANT')")
     public String statistics() {
-        return "orders";
+        return "orders/order";
     }
 
     @GetMapping("/index")

@@ -3,50 +3,122 @@
 <div class="modal-dialog" role="document">
     <div class="modal-content">
         <div class="modal-header">
-            <h5 class="modal-title" id="addModalLabel">Редактирование пользователя</h5>
+            <h5 class="modal-title" id="addModalLabel">Редактирование заказа</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-            <form th:action="@{/users/updateUser}" th:object="${user}" method="post" id="edit_user" >
-                <input type="hidden"  th:field="*{pid}" name="pid" id="edit_user_id">
+            <form th:action="@{orders/updateOrder}" th:object="${order}" method="post" id="edit_order">
+                <input type="hidden" th:field="*{pid}" name="pid" id="edit_order_id">
+
+
                 <div class="mb-3">
-                    <label for="lastName" class="col-form-label">Фамилия:</label>
-                    <input type="text" th:field="*{lastName}" class="form-control" id="lastName" name="lastName" required>
-                </div>
-                <div class="mb-3">
-                    <label for="firstName" class="col-form-label">Имя:</label>
-                    <input type="text"  th:field="*{firstName}" class="form-control" id="firstName" name="firstName" required>
-                </div>
-                <div class="mb-3">
-                    <label for="middleName" class="col-form-label">Отчество:</label>
-                    <input type="text"  th:field="*{middleName}" class="form-control" id="middleName" name="middleName">
-                </div>
-                <div class="mb-3">
-                    <label for="login" class="col-form-label">Логин:</label>
-                    <input type="text"  th:field="*{login}" class="form-control" id="login" name="login" required>
-                </div>
-                <div class="mb-3">
-                    <label for="password" class="col-form-label">Пароль:</label>
-                    <input type="password"  th:field="*{password}" class="form-control" id="password" name="password" required>
-                </div>
-                <div class="mb-3">
-                    <label for="user-roles" class="col-form-label">Роль:</label>
-                    <select id="user-roles" class="form-select" size="3" th:field="*{roles}" multiple="multiple" required>
-                        <option th:each="role : ${predefinedRoles}"
-                                th:value="${{role}}"
-                                th:text="${role.pid}">
-                            Cinema
+                    <label for="order-users" class="col-form-label">Заказчик:</label>
+                    <select id="order-users" class="form-select" size="3" th:field="*{user}" multiple="multiple"
+                            required>
+                        <option th:each="user : ${predefinedUsers}"
+                                th:value="${{user}}"
+                                th:text="${user.getFio()}">
                         </option>
                     </select>
                 </div>
+
                 <div class="mb-3">
-                    <label class="col-form-label">Статус:</label>
-                    <input name= "status"  th:field="*{status}" type="radio" class="radio" required
-                           th:each="status : ${T(by.nurvazarov.generalnasa.model.user.Status).values()}"
-                           th:text="${status}"
-                           th:value="${status}"/>
-                    </label>
+                    <label for="order-status" class="col-form-label">Статус:</label>
+                    <select name="status" class="form-select" id="order-status" required>
+                        <option value="" selected="selected"></option>
+                        <option th:each="status: ${T(by.nurvazarov.generalnasa.model.order.OrderStatus).values()}"
+                                th:value="${status}"
+                                th:text="${status.getRusText()}">
+                        </option>
+                    </select>
                 </div>
+
+                <div class="mb-3">
+                    <label for="comment" class="col-form-label">Комментарий:</label>
+                    <input type="text" th:field="*{comment}" class="form-control" id="comment" name="comment" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="createDate" class="col-form-label">Создан:</label>
+                    <input type="date" th:field="*{createDate}" class="form-control" id="createDate" name="createDate"
+                           required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="lastUpdateDate" class="col-form-label">Обновлен:</label>
+                    <input type="date" th:field="*{lastUpdateDate}" class="form-control" id="lastUpdateDate"
+                           name="lastUpdateDate" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="order-spiders" class="col-form-label">Пауки:</label>
+                    <select id="order-spiders" class="form-select" size="3" th:field="*{spiders}" multiple="multiple"
+                            required>
+                        <option th:each="spider : ${predefinedSpiders}"
+                                th:value="${{spider}}"
+                                th:text="${spider.getName().getRusName()}">
+                        </option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="order-snakes" class="col-form-label">Змеи:</label>
+                    <select id="order-snakes" class="form-select" size="3" th:field="*{snakes}" multiple="multiple"
+                            required>
+                        <option th:each="snake : ${predefinedSnakes}"
+                                th:value="${{snake}}"
+                                th:text="${snake.getName().getRusName()}">
+                        </option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="order-scorpions" class="col-form-label">Скорпионы:</label>
+                    <select id="order-scorpions" class="form-select" size="3" th:field="*{scorpions}"
+                            multiple="multiple"
+                            required>
+                        <option th:each="scorpion : ${predefinedScorpions}"
+                                th:value="${{scorpion}}"
+                                th:text="${scorpion.getName().getRusName()}">
+                        </option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="order-lizards" class="col-form-label">Ящерицы:</label>
+                    <select id="order-lizards" class="form-select" size="3" th:field="*{lizards}" multiple="multiple"
+                            required>
+                        <option th:each="lizard : ${predefinedLizards}"
+                                th:value="${{lizard}}"
+                                th:text="${lizard.getName().getRusName()}">
+                        </option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="order-insects" class="col-form-label">Насекомые:</label>
+                    <select id="order-insects" class="form-select" size="3" th:field="*{insects}" multiple="multiple"
+                            required>
+                        <option th:each="insect : ${predefinedInsects}"
+                                th:value="${{insect}}"
+                                th:text="${insect.getName().getRusName()}">
+                        </option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="order-equipments" class="col-form-label">Сопутствующие товары:</label>
+                    <select id="order-equipments" class="form-select" size="3" th:field="*{equipments}"
+                            multiple="multiple"
+                            required>
+                        <option th:each="equipment : ${predefinedEquipments}"
+                                th:value="${{equipment}}"
+                                th:text="${equipment.getName()}">
+                        </option>
+                    </select>
+                </div>
+
+
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close
                     </button>

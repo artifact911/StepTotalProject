@@ -135,10 +135,13 @@ async function saveUser(request) {
 
 }
 
+// const path = "http://localhost:8080/users"
+
 async function search() {
     await console.log('Search from JS')
 
     let table = document.getElementById('tableUser');
+
     let searchString = document.getElementById('search').value.trim();
     console.log(searchString)
     const param = new URLSearchParams({
@@ -151,5 +154,10 @@ async function search() {
     console.log(users);
     document.querySelector(".user_list").innerHTML = users;
     eventForUserPage();
+
+    // fetch(path + "users/filter?" + param).then(response => response.text()).then(fragment => {
+    //     document.querySelector(".user_list").innerHTML = fragment
+    //     eventForUserPage();
+    // })
 
 }

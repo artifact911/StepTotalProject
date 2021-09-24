@@ -2,6 +2,7 @@ package by.nurvazarov.generalnasa.model.product.spider;
 
 import by.nurvazarov.generalnasa.model.order.OrderByUser;
 
+import by.nurvazarov.generalnasa.model.product.Products;
 import by.nurvazarov.generalnasa.model.product.enums.Danger;
 import by.nurvazarov.generalnasa.model.product.enums.Difficulty;
 import by.nurvazarov.generalnasa.model.product.enums.Sex;
@@ -12,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class Spider {
+public class Spider implements Products {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

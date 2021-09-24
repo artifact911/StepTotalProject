@@ -1,13 +1,14 @@
 package by.nurvazarov.generalnasa.model.product.equipment;
 
 import by.nurvazarov.generalnasa.model.order.OrderByUser;
+import by.nurvazarov.generalnasa.model.product.Products;
 
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class Equipment {
+public class Equipment implements Products {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

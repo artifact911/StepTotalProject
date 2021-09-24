@@ -1,6 +1,7 @@
 package by.nurvazarov.generalnasa.model.product.lizard;
 
 import by.nurvazarov.generalnasa.model.order.OrderByUser;
+import by.nurvazarov.generalnasa.model.product.Products;
 import by.nurvazarov.generalnasa.model.product.enums.Difficulty;
 import by.nurvazarov.generalnasa.model.product.enums.Sex;
 
@@ -9,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class Lizard {
+public class Lizard implements Products {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

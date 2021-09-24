@@ -3,13 +3,13 @@
       xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <div class="btn-toolbar justify-content-between" role="toolbar">
     <div class="btn-group mb-3 mt-3" role="group">
-        <a th:href="@{users/addUser}" class="btn btn-success" id="addBtn">
+        <a th:href="@{orders/addOrder}" class="btn btn-success" id="addBtn">
             Добавить
         </a>
     </div>
     <div class="input-group mb-3 w-50 ms-auto">
         <input type="text" id="search" class="form-control" aria-label="Search" aria-describedby="button-addon2">
-        <button class="btn btn-outline-secondary" type="button" onclick="search()">Поиск</button>
+        <button class="btn btn-outline-secondary" th:href="@{orders/filter}" type="button" onclick="searchOrder()">Поиск</button>
     </div>
 </div>
 </html>
