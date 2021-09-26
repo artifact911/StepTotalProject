@@ -132,6 +132,7 @@ public class OrderController {
     @RequestMapping(value = "/orders/delete", method = {RequestMethod.DELETE, RequestMethod.GET})
     public String deleteOrder(Long pid, Model model) {
         try {
+
             orderService.deleteOrderByPid(pid);
             model.addAttribute("orders", orderService.getAllOrders());
             model.addAttribute("message", "Успешно удалено");
