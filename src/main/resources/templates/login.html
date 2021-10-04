@@ -5,32 +5,38 @@
 </div>
 <body class="text-center">
 
-<main class="form-signin">
-    <form method="post" action="/auth/login">
-        <img class="mb-2" th:src="@{/img/logo.png}" alt="" width="300" height="250">
-        <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+<div id="wrapper" class="m-1">
+    <header class="main-name">
+        <h1>ExoticWorld:
+            <h3>happy to help</h3>
+        </h1>
+    </header>
+</div>
+<div id="table">
+    <main class="form-signin">
+        <form method="post" action="/auth/login">
 
-        <div class="form-floating">
-            <input type="text" name="username" class="form-control" id="floatingInput" placeholder="login">
-            <label for="floatingInput">Login</label>
-        </div>
-        <div class="form-floating">
-            <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="password">
-            <label for="floatingPassword">Password</label>
-        </div>
+            <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
-        <div class="checkbox mb-3">
-            <label>
-                <input type="checkbox" name="remember-me"> Remember me
-            </label>
-        </div>
-
-        <div th:replace="fragments/alert"></div>
-
-        <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
-        <p class="mt-5 mb-3 text-muted">by NASa © 2020–2021</p>
-    </form>
-</main>
+            <div class="form-floating">
+                <input type="text" name="username" class="form-control btn" id="floatingInput" placeholder="login">
+                <label for="floatingInput">Login</label>
+            </div>
+            <div class="form-floating">
+                <input type="password" name="password" class="form-control btn" id="floatingPassword" placeholder="password">
+                <label for="floatingPassword">Password</label>
+            </div>
+            <div class="checkbox mb-3">
+                <label>
+                    <input class="btn" type="checkbox" name="remember-me"> Remember me
+                </label>
+            </div>
+            <div th:replace="fragments/alert"></div>
+            <button id="signInButton" class="w-100 btn btn-lg" type="submit">Sign in</button>
+            <p class="mt-5 mb-3 text-muted">by NASa © 2020–2021</p>
+        </form>
+    </main>
+</div>
 
 
 </body>

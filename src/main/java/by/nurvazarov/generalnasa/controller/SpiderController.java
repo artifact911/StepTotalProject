@@ -20,7 +20,7 @@ import java.util.List;
 @RequestMapping("/references/spiders")
 public class SpiderController {
 
-    private static final String SPIDER_TABLE = "references/spider/spiderTable :: spider_list";
+    private static final String SPIDER_TABLE = "references/spider/spiderTable";
     private static final String ERROR_ALERT = "fragments/alert :: alert";
     private static final String EDIT_SPIDER_MODAL = "references/spider/modal/editSpider";
     private static final String ADD_SPIDER_MODAL = "references/spider/modal/addSpider";

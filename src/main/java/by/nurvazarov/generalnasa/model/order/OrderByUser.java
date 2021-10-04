@@ -67,9 +67,15 @@ public class OrderByUser {
     private List<Equipment> equipments = new ArrayList<>();
 
     @Transient
-    public String dateHelper(String date) {
+    public String createDateHelper() {
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        return dateFormat.format(date);
+        return dateFormat.format(createDate);
+    }
+
+    @Transient
+    public String lastUpdateDateHelper() {
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        return dateFormat.format(lastUpdateDate);
     }
 
     public Long getPid() {

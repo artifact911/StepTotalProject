@@ -21,8 +21,8 @@
         <td th:text="*{user.getFio()}"></td>
         <td th:text="*{orderStatus.getRusText()}"></td>
         <td th:text="*{comment}"></td>
-        <td th:text="*{createDate}"></td>
-        <td th:text="*{lastUpdateDate}"></td>
+        <td th:text="*{createDateHelper()}"></td>
+        <td th:text="*{lastUpdateDateHelper()}"></td>
 
         <td>
             <a th:href="@{orders/edit/(pid=*{pid})}" class="btn btn-warning editBtn">
