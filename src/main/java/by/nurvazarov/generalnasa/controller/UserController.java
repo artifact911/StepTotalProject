@@ -14,7 +14,7 @@ import java.util.List;
 @RequestMapping("/users")
 public class UserController {
 
-    private static final String USER_TABLE = "users/userTable :: user_list";
+    private static final String USER_TABLE = "users/userTable";
     private static final String ERROR_ALERT = "fragments/alert :: alert";
     private static final String EDIT_MODAL = "users/modal/editUser";
     private static final String ADD_MODAL = "users/modal/addUser";
