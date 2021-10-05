@@ -2,7 +2,222 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
+<div th:replace="fragments/header :: head(~{}, ~{})"></div>
 <body>
+<header>
+    <div th:replace="fragments/nav-bar :: nav_bar"></div>
+</header>
+<main class="container-fluid">
+
+
+    <div class="accordion accordion-flush" id="accordionFlushExample">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingOne">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                    Насекомые
+                </button>
+            </h2>
+            <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+                 data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                    <div th:each="insect:${insects}" th:object="${insect}" class="row mb-6">
+                        <div class="col-md-6">
+                            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative mt-3">
+                                <div class="col p-4 d-flex flex-column position-static">
+                                    <strong class="d-inline-block mb-2 text-primary">Zoo</strong>
+                                    <h3 class="mb-0" th:text="*{name.getRusName()}"></h3>
+                                    <div class="mb-1 text-muted" th:text="*{description}"></div>
+                                    <a th:href="@{rent/(pid=*{pid})}" class="btn btn-success">Order</a>
+                                </div>
+                                <div class="col-auto d-none d-lg-block">
+                                    <!--                    <img th:src="@{/references/book/image(pid=*{pid})}" style="width: 100px; height: 100px;"-->
+                                    <!--                         class="card-img">-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                    Пауки
+                </button>
+            </h2>
+            <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
+                 data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                    <div th:each="spider:${spiders}" th:object="${spider}" class="row mb-6">
+                        <div class="col-md-6">
+                            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative mt-3">
+                                <div class="col p-4 d-flex flex-column position-static">
+                                    <strong class="d-inline-block mb-2 text-primary">Zoo</strong>
+                                    <h3 class="mb-0" th:text="*{name.getRusName()}"></h3>
+                                    <div class="mb-1 text-muted" th:text="*{description}"></div>
+                                    <a th:href="@{rent/(pid=*{pid})}" class="btn btn-success">Order</a>
+                                </div>
+                                <div class="col-auto d-none d-lg-block">
+                                    <!--                    <img th:src="@{/references/book/image(pid=*{pid})}" style="width: 100px; height: 100px;"-->
+                                    <!--                         class="card-img">-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                    Ящерицы
+                </button>
+            </h2>
+            <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
+                 data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                    <div th:each="lizard:${lizards}" th:object="${lizard}" class="row mb-6">
+                        <div class="col-md-6">
+                            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative mt-3">
+                                <div class="col p-4 d-flex flex-column position-static">
+                                    <strong class="d-inline-block mb-2 text-primary">Zoo</strong>
+                                    <h3 class="mb-0" th:text="*{name.getRusName()}"></h3>
+                                    <div class="mb-1 text-muted" th:text="*{description}"></div>
+                                    <a th:href="@{rent/(pid=*{pid})}" class="btn btn-success">Order</a>
+                                </div>
+                                <div class="col-auto d-none d-lg-block">
+                                    <!--                    <img th:src="@{/references/book/image(pid=*{pid})}" style="width: 100px; height: 100px;"-->
+                                    <!--                         class="card-img">-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingFour">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                    Скорпионы
+                </button>
+            </h2>
+            <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour"
+                 data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                    <div th:each="scorpion:${scorpions}" th:object="${scorpion}" class="row mb-6">
+                        <div class="col-md-6">
+                            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative mt-3">
+                                <div class="col p-4 d-flex flex-column position-static">
+                                    <strong class="d-inline-block mb-2 text-primary">Zoo</strong>
+                                    <h3 class="mb-0" th:text="*{name.getRusName()}"></h3>
+                                    <div class="mb-1 text-muted" th:text="*{description}"></div>
+                                    <a th:href="@{rent/(pid=*{pid})}" class="btn btn-success">Order</a>
+                                </div>
+                                <div class="col-auto d-none d-lg-block">
+                                    <!--                    <img th:src="@{/references/book/image(pid=*{pid})}" style="width: 100px; height: 100px;"-->
+                                    <!--                         class="card-img">-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingFive">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+                    Змеи
+                </button>
+            </h2>
+            <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive"
+                 data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                    <div th:each="snake:${snakes}" th:object="${snake}" class="row mb-6">
+                        <div class="col-md-6">
+                            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative mt-3">
+                                <div class="col p-4 d-flex flex-column position-static">
+                                    <strong class="d-inline-block mb-2 text-primary">Zoo</strong>
+                                    <h3 class="mb-0" th:text="*{name.getRusName()}"></h3>
+                                    <div class="mb-1 text-muted" th:text="*{description}"></div>
+                                    <a th:href="@{rent/(pid=*{pid})}" class="btn btn-success">Order</a>
+                                </div>
+                                <div class="col-auto d-none d-lg-block">
+                                    <!--                    <img th:src="@{/references/book/image(pid=*{pid})}" style="width: 100px; height: 100px;"-->
+                                    <!--                         class="card-img">-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingSix">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
+                    Сопутствующие товары
+                </button>
+            </h2>
+            <div id="flush-collapseSix" class="accordion-collapse collapse" aria-labelledby="flush-headingSix"
+                 data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                    <div th:each="equipment:${equipments}" th:object="${equipment}" class="row mb-6">
+                        <div class="col-md-6">
+                            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative mt-3">
+                                <div class="col p-4 d-flex flex-column position-static">
+                                    <strong class="d-inline-block mb-2 text-primary">Zoo</strong>
+                                    <h3 class="mb-0" th:text="*{name}"></h3>
+                                </div>
+                                <div class="col-auto d-none d-lg-block">
+                                    <img th:src="@{/references/equipments/image(pid=*{pid})}"
+                                         style="width: 100px; height: 100px;"
+                                         class="card-img">
+                                </div>
+                                    <a th:href="@{rent/(pid=*{pid})}" class="btn btn-success">Order</a>
+
+
+
+                                    <div class="accordion" id="accordionExample">
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingOne">
+                                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                                        data-bs-target="#collapseOne" aria-expanded="true"
+                                                        aria-controls="collapseOne">
+                                                    Подробное описание
+                                                </button>
+                                            </h2>
+                                            <div id="collapseOne" class="accordion-collapse collapse show"
+                                                 aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    <div class="card" style="width: 30rem;">
+                                                        <img th:src="@{/references/equipments/image(pid=*{pid})}"
+                                                             class="card-img-top" alt="...">
+                                                        <div class="card-body">
+                                                            <p class="mb-1 text-muted" th:text="*{description}"></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</main>
+<footer th:include="fragments/footer :: footer"></footer>
 
 </body>
 </html>

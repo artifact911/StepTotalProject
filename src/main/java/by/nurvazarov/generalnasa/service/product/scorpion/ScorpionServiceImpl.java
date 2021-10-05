@@ -65,4 +65,10 @@ public class ScorpionServiceImpl implements ScorpionService {
     public List<Scorpion> getSearchScorpion(String searchString) {
         return scorpionRepository.searchScorpion(searchString);
     }
+
+    @Override
+    @Transactional(readOnly = true)
+    public byte[] getImg(Long pid) {
+        return scorpionRepository.getImg(pid);
+    }
 }

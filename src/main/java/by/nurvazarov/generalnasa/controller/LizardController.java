@@ -57,9 +57,7 @@ public class LizardController {
 
     @RequestMapping(value = "/image", produces = MediaType.IMAGE_PNG_VALUE)
     public ResponseEntity<byte[]> getImage(Long pid) throws IOException {
-        Lizard lizard = lizardService.getLizardByPid(pid);
-        byte[] imageContent = null;
-        imageContent = lizard.getImage();
+        byte[] imageContent = lizardService.getImg(pid);
         final HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.IMAGE_PNG);
         return new ResponseEntity<byte[]>(imageContent, headers, HttpStatus.OK);

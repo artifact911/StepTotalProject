@@ -18,4 +18,6 @@ public interface SnakeService {
     void deleteSnakeById(Long pid);
 
     List<Snake> getSearchSnake(String searchString);
+
+    byte[] getImg(Long pid);
 }

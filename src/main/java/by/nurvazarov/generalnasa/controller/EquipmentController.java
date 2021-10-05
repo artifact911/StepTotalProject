@@ -13,6 +13,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
@@ -53,16 +54,6 @@ public class EquipmentController {
             model.addAttribute("alertClass", "alert-danger");
             return ADD_EQUIPMENT_MODAL;
         }
-    }
-
-    @RequestMapping(value = "/image", produces = MediaType.IMAGE_PNG_VALUE)
-    public ResponseEntity<byte[]> getImage(Long pid) throws IOException {
-        Equipment equipment = equipmentService.getEquipmentByPid(pid);
-        byte[] imageContent = null;
-        imageContent = equipment.getImage();
-        final HttpHeaders headers = new HttpHeaders();
-        headers.setContentType(MediaType.IMAGE_PNG);
-        return new ResponseEntity<byte[]>(imageContent, headers, HttpStatus.OK);
     }
 
     @PostMapping(value = "/saveEquipment", consumes = {"multipart/form-data"})
@@ -148,5 +139,13 @@ public class EquipmentController {
             model.addAttribute("alertClass", "alert-danger");
             return EQUIPMENT_TABLE;
         }
+    }
+
+    @RequestMapping(value = "/image", produces = MediaType.IMAGE_PNG_VALUE)
+    public ResponseEntity<byte[]> getImage(Long pid) throws IOException {
+        byte[] imageContent = equipmentService.getImg(pid);
+        final HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.IMAGE_PNG);
+        return new ResponseEntity<byte[]>(imageContent, headers, HttpStatus.OK);
     }
 }

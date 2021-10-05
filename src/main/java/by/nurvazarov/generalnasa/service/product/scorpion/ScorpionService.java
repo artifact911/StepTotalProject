@@ -18,4 +18,6 @@ public interface ScorpionService {
     void deleteScorpionById(Long pid);
 
     List<Scorpion> getSearchScorpion(String searchString);
+
+    byte[] getImg(Long pid);
 }

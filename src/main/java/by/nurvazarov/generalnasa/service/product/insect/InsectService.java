@@ -18,4 +18,6 @@ public interface InsectService {
     void deleteInsectById(Long pid);
 
     List<Insect> getSearchInsect(String searchString);
+
+    byte[] getImg(Long pid);
 }

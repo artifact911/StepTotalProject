@@ -64,4 +64,10 @@ public class SnakeServiceImpl implements SnakeService {
     public List<Snake> getSearchSnake(String searchString) {
         return snakeRepository.searchSnake(searchString);
     }
+
+    @Override
+    @Transactional(readOnly = true)
+    public byte[] getImg(Long pid) {
+        return snakeRepository.getImg(pid);
+    }
 }

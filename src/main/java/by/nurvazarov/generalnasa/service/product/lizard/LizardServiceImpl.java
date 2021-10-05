@@ -64,4 +64,10 @@ public class LizardServiceImpl implements LizardService {
     public List<Lizard> getSearchLizard(String searchString) {
         return lizardRepository.searchLizard(searchString);
     }
+
+    @Override
+    @Transactional(readOnly = true)
+    public byte[] getImg(Long pid) {
+        return lizardRepository.getImg(pid);
+    }
 }

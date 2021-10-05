@@ -18,4 +18,6 @@ public interface SpiderService {
     void deleteSpiderById(Long pid);
 
     List<Spider> getSearchSpider(String searchString);
+
+    byte[] getImg(Long pid);
 }

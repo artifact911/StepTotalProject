@@ -65,4 +65,10 @@ public class SpiderServiceImpl implements SpiderService{
     public List<Spider> getSearchSpider(String searchString) {
         return spiderRepository.searchSpider(searchString);
     }
+
+    @Override
+    @Transactional(readOnly = true)
+    public byte[] getImg(Long pid) {
+        return spiderRepository.getImg(pid);
+    }
 }

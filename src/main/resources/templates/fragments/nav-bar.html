@@ -14,11 +14,11 @@
                     <a class="nav-link fs-5" th:classappend="${#strings.startsWith(view, '/users')? 'active':''}"
                        aria-current="page" th:href="@{/users}">Пользователи</a>
                 </li>
-                <li class="nav-item" sec:authorize="hasAnyAuthority('ADMIN', 'ASSISTANT', 'CUSTOMER')">
+                <li class="nav-item" sec:authorize="hasAnyAuthority('ADMIN', 'ASSISTANT')">
                     <a class="nav-link fs-5" th:classappend="${#strings.startsWith(view, '/references')? 'active':''}"
                        aria-current="page" th:href="@{/references}">Каталог</a>
                 </li>
-                <li class="nav-item" sec:authorize="hasAnyAuthority('ADMIN', 'LIBRARIAN')">
+                <li class="nav-item" sec:authorize="hasAnyAuthority('ADMIN', 'ASSISTANT')">
                     <a class="nav-link fs-5" th:classappend="${#strings.startsWith(view, '/statistics')? 'active':''}"
                        aria-current="page" th:href="@{/orders/order}">Заказы</a>
                 </li>

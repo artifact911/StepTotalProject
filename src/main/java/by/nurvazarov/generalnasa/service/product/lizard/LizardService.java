@@ -18,4 +18,6 @@ public interface LizardService {
     void deleteLizardById(Long pid);
 
     List<Lizard> getSearchLizard(String searchString);
+
+    byte[] getImg(Long pid);
 }

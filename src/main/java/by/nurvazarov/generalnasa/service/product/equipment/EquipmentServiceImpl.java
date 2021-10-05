@@ -64,4 +64,10 @@ public class EquipmentServiceImpl implements EquipmentService {
     public List<Equipment> getSearchEquipment(String searchString) {
         return equipmentRepository.searchEquipment(searchString);
     }
+
+    @Override
+    @Transactional(readOnly = true)
+    public byte[] getImg(Long pid) {
+        return equipmentRepository.getImg(pid);
+    }
 }

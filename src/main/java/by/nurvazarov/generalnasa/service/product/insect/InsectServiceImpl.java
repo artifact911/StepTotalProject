@@ -64,4 +64,10 @@ public class InsectServiceImpl implements InsectService {
     public List<Insect> getSearchInsect(String searchString) {
         return insectRepository.searchInsect(searchString);
     }
+
+    @Override
+    @Transactional(readOnly = true)
+    public byte[] getImg(Long pid) {
+        return insectRepository.getImg(pid);
+    }
 }
