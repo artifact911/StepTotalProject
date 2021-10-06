@@ -9,7 +9,6 @@
 </header>
 <main class="container-fluid">
 
-
     <div class="accordion accordion-flush" id="accordionFlushExample">
         <div class="accordion-item">
             <h2 class="accordion-header" id="flush-headingOne">
@@ -24,16 +23,39 @@
                     <div th:each="insect:${insects}" th:object="${insect}" class="row mb-6">
                         <div class="col-md-6">
                             <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative mt-3">
+
                                 <div class="col p-4 d-flex flex-column position-static">
                                     <strong class="d-inline-block mb-2 text-primary">Zoo</strong>
-                                    <h3 class="mb-0" th:text="*{name.getRusName()}"></h3>
-                                    <div class="mb-1 text-muted" th:text="*{description}"></div>
-                                    <a th:href="@{rent/(pid=*{pid})}" class="btn btn-success">Order</a>
+                                    <h3 class="mb-0" th:text="*{name}"></h3>
                                 </div>
                                 <div class="col-auto d-none d-lg-block">
-                                    <!--                    <img th:src="@{/references/book/image(pid=*{pid})}" style="width: 100px; height: 100px;"-->
-                                    <!--                         class="card-img">-->
+                                    <img th:src="@{/references/insects/image(pid=*{pid})}"
+                                         style="width: 100px; height: 100px;"
+                                         class="card-img">
                                 </div>
+                                <a th:href="@{rent/(pid=*{pid})}" class="btn btn-success">Order</a>
+                                <div class="accordion" id="accordionExample5">
+                                    <h2 class="accordion-header" th:id="*{name}">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                                data-bs-target="#collapseOne5" aria-expanded="true"
+                                                aria-controls="collapseOne5">
+                                            Подробное описание
+                                        </button>
+                                    </h2>
+                                    <div id="collapseOne5" class="accordion-collapse collapse"
+                                         aria-labelledby="headingOne5" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <div class="card" style="width: 30rem;">
+                                                <img th:src="@{/references/insects/image(pid=*{pid})}"
+                                                     class="card-img-top" alt="...">
+                                                <div class="card-body">
+                                                    <p class="mb-1 text-muted" th:text="*{description}"></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -53,16 +75,39 @@
                     <div th:each="spider:${spiders}" th:object="${spider}" class="row mb-6">
                         <div class="col-md-6">
                             <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative mt-3">
+
                                 <div class="col p-4 d-flex flex-column position-static">
                                     <strong class="d-inline-block mb-2 text-primary">Zoo</strong>
-                                    <h3 class="mb-0" th:text="*{name.getRusName()}"></h3>
-                                    <div class="mb-1 text-muted" th:text="*{description}"></div>
-                                    <a th:href="@{rent/(pid=*{pid})}" class="btn btn-success">Order</a>
+                                    <h3 class="mb-0" th:text="*{name}"></h3>
                                 </div>
                                 <div class="col-auto d-none d-lg-block">
-                                    <!--                    <img th:src="@{/references/book/image(pid=*{pid})}" style="width: 100px; height: 100px;"-->
-                                    <!--                         class="card-img">-->
+                                    <img th:src="@{/references/spiders/image(pid=*{pid})}"
+                                         style="width: 100px; height: 100px;"
+                                         class="card-img">
                                 </div>
+                                <a th:href="@{rent/(pid=*{pid})}" class="btn btn-success">Order</a>
+                                <div class="accordion" id="accordionExample4">
+                                    <h2 class="accordion-header" th:id="*{name}">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                                data-bs-target="#collapseOne4" aria-expanded="true"
+                                                aria-controls="collapseOne4">
+                                            Подробное описание
+                                        </button>
+                                    </h2>
+                                    <div id="collapseOne4" class="accordion-collapse collapse"
+                                         aria-labelledby="headingOne4" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <div class="card" style="width: 30rem;">
+                                                <img th:src="@{/references/spiders/image(pid=*{pid})}"
+                                                     class="card-img-top" alt="...">
+                                                <div class="card-body">
+                                                    <p class="mb-1 text-muted" th:text="*{description}"></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -82,16 +127,39 @@
                     <div th:each="lizard:${lizards}" th:object="${lizard}" class="row mb-6">
                         <div class="col-md-6">
                             <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative mt-3">
+
                                 <div class="col p-4 d-flex flex-column position-static">
                                     <strong class="d-inline-block mb-2 text-primary">Zoo</strong>
-                                    <h3 class="mb-0" th:text="*{name.getRusName()}"></h3>
-                                    <div class="mb-1 text-muted" th:text="*{description}"></div>
-                                    <a th:href="@{rent/(pid=*{pid})}" class="btn btn-success">Order</a>
+                                    <h3 class="mb-0" th:text="*{name}"></h3>
                                 </div>
                                 <div class="col-auto d-none d-lg-block">
-                                    <!--                    <img th:src="@{/references/book/image(pid=*{pid})}" style="width: 100px; height: 100px;"-->
-                                    <!--                         class="card-img">-->
+                                    <img th:src="@{/references/lizards/image(pid=*{pid})}"
+                                         style="width: 100px; height: 100px;"
+                                         class="card-img">
                                 </div>
+                                <a th:href="@{rent/(pid=*{pid})}" class="btn btn-success">Order</a>
+                                <div class="accordion" id="accordionExample3">
+                                    <h2 class="accordion-header" th:id="*{name}">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                                data-bs-target="#collapseOne3" aria-expanded="true"
+                                                aria-controls="collapseOne3">
+                                            Подробное описание
+                                        </button>
+                                    </h2>
+                                    <div id="collapseOne3" class="accordion-collapse collapse"
+                                         aria-labelledby="headingOne3" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <div class="card" style="width: 30rem;">
+                                                <img th:src="@{/references/lizards/image(pid=*{pid})}"
+                                                     class="card-img-top" alt="...">
+                                                <div class="card-body">
+                                                    <p class="mb-1 text-muted" th:text="*{description}"></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -111,16 +179,39 @@
                     <div th:each="scorpion:${scorpions}" th:object="${scorpion}" class="row mb-6">
                         <div class="col-md-6">
                             <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative mt-3">
+
                                 <div class="col p-4 d-flex flex-column position-static">
                                     <strong class="d-inline-block mb-2 text-primary">Zoo</strong>
-                                    <h3 class="mb-0" th:text="*{name.getRusName()}"></h3>
-                                    <div class="mb-1 text-muted" th:text="*{description}"></div>
-                                    <a th:href="@{rent/(pid=*{pid})}" class="btn btn-success">Order</a>
+                                    <h3 class="mb-0" th:text="*{name}"></h3>
                                 </div>
                                 <div class="col-auto d-none d-lg-block">
-                                    <!--                    <img th:src="@{/references/book/image(pid=*{pid})}" style="width: 100px; height: 100px;"-->
-                                    <!--                         class="card-img">-->
+                                    <img th:src="@{/references/scorpions/image(pid=*{pid})}"
+                                         style="width: 100px; height: 100px;"
+                                         class="card-img">
                                 </div>
+                                <a th:href="@{rent/(pid=*{pid})}" class="btn btn-success">Order</a>
+                                <div class="accordion" id="accordionExample2">
+                                    <h2 class="accordion-header" th:id="*{name}">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                                data-bs-target="#collapseOne2" aria-expanded="true"
+                                                aria-controls="collapseOne2">
+                                            Подробное описание
+                                        </button>
+                                    </h2>
+                                    <div id="collapseOne2" class="accordion-collapse collapse"
+                                         aria-labelledby="headingOne2" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <div class="card" style="width: 30rem;">
+                                                <img th:src="@{/references/scorpions/image(pid=*{pid})}"
+                                                     class="card-img-top" alt="...">
+                                                <div class="card-body">
+                                                    <p class="mb-1 text-muted" th:text="*{description}"></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -140,15 +231,38 @@
                     <div th:each="snake:${snakes}" th:object="${snake}" class="row mb-6">
                         <div class="col-md-6">
                             <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative mt-3">
+
+
                                 <div class="col p-4 d-flex flex-column position-static">
                                     <strong class="d-inline-block mb-2 text-primary">Zoo</strong>
-                                    <h3 class="mb-0" th:text="*{name.getRusName()}"></h3>
-                                    <div class="mb-1 text-muted" th:text="*{description}"></div>
-                                    <a th:href="@{rent/(pid=*{pid})}" class="btn btn-success">Order</a>
+                                    <h3 class="mb-0" th:text="*{name}"></h3>
                                 </div>
                                 <div class="col-auto d-none d-lg-block">
-                                    <!--                    <img th:src="@{/references/book/image(pid=*{pid})}" style="width: 100px; height: 100px;"-->
-                                    <!--                         class="card-img">-->
+                                    <img th:src="@{/references/snakes/image(pid=*{pid})}"
+                                         style="width: 100px; height: 100px;"
+                                         class="card-img">
+                                </div>
+                                <a th:href="@{rent/(pid=*{pid})}" class="btn btn-success">Order</a>
+                                <div class="accordion" id="accordionExample1">
+                                    <h2 class="accordion-header" th:id="*{name}">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                                data-bs-target="#collapseOne1" aria-expanded="true"
+                                                aria-controls="collapseOne1">
+                                            Подробное описание
+                                        </button>
+                                    </h2>
+                                    <div id="collapseOne1" class="accordion-collapse collapse"
+                                         aria-labelledby="headingOne1" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <div class="card" style="width: 30rem;">
+                                                <img th:src="@{/references/snakes/image(pid=*{pid})}"
+                                                     class="card-img-top" alt="...">
+                                                <div class="card-body">
+                                                    <p class="mb-1 text-muted" th:text="*{description}"></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -168,7 +282,9 @@
                 <div class="accordion-body">
                     <div th:each="equipment:${equipments}" th:object="${equipment}" class="row mb-6">
                         <div class="col-md-6">
-                            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative mt-3">
+                            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-500 position-relative mt-3">
+
+
                                 <div class="col p-4 d-flex flex-column position-static">
                                     <strong class="d-inline-block mb-2 text-primary">Zoo</strong>
                                     <h3 class="mb-0" th:text="*{name}"></h3>
@@ -178,34 +294,31 @@
                                          style="width: 100px; height: 100px;"
                                          class="card-img">
                                 </div>
-                                    <a th:href="@{rent/(pid=*{pid})}" class="btn btn-success">Order</a>
+                                <a th:href="@{rent/(pid=*{pid})}" class="btn btn-success">Order</a>
 
-
-
-                                    <div class="accordion" id="accordionExample">
-                                        <div class="accordion-item">
-                                            <h2 class="accordion-header" id="headingOne">
-                                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                                        data-bs-target="#collapseOne" aria-expanded="true"
-                                                        aria-controls="collapseOne">
-                                                    Подробное описание
-                                                </button>
-                                            </h2>
-                                            <div id="collapseOne" class="accordion-collapse collapse show"
-                                                 aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                                                <div class="accordion-body">
-                                                    <div class="card" style="width: 30rem;">
-                                                        <img th:src="@{/references/equipments/image(pid=*{pid})}"
-                                                             class="card-img-top" alt="...">
-                                                        <div class="card-body">
-                                                            <p class="mb-1 text-muted" th:text="*{description}"></p>
-                                                        </div>
+                                <div class="accordion" id="accordionExample">
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingOne">
+                                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                                    data-bs-target="#collapseOne" aria-expanded="true"
+                                                    aria-controls="collapseOne">
+                                                Подробное описание
+                                            </button>
+                                        </h2>
+                                        <div id="collapseOne" class="accordion-collapse collapse"
+                                             aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                            <div class="accordion-body">
+                                                <div class="card" style="width: 30rem;">
+                                                    <img th:src="@{/references/equipments/image(pid=*{pid})}"
+                                                         class="card-img-top" alt="...">
+                                                    <div class="card-body">
+                                                        <p class="mb-1 text-muted" th:text="*{description}"></p>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
+                                    </div>
                                 </div>
-
 
 
                             </div>
@@ -214,8 +327,8 @@
                 </div>
             </div>
         </div>
-
     </div>
+
 </main>
 <footer th:include="fragments/footer :: footer"></footer>
 
