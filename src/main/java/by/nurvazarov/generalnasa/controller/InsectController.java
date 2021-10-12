@@ -55,7 +55,7 @@ public class InsectController {
     }
 
     @RequestMapping(value = "/image", produces = MediaType.IMAGE_PNG_VALUE)
-    public ResponseEntity<byte[]> getImage(Long pid) throws IOException {
+    public ResponseEntity<byte[]> getImage(Long pid) {
         byte[] imageContent = insectService.getImg(pid);
         final HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.IMAGE_PNG);

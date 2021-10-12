@@ -26,7 +26,7 @@
 
                                 <div class="col p-4 d-flex flex-column position-static">
                                     <strong class="d-inline-block mb-2 text-primary">Zoo</strong>
-                                    <h3 class="mb-0" th:text="*{name}"></h3>
+                                    <h3 class="mb-0" th:text="*{name.getRusName()}"></h3>
                                 </div>
                                 <div class="col-auto d-none d-lg-block">
                                     <img th:src="@{/references/insects/image(pid=*{pid})}"
@@ -78,7 +78,7 @@
 
                                 <div class="col p-4 d-flex flex-column position-static">
                                     <strong class="d-inline-block mb-2 text-primary">Zoo</strong>
-                                    <h3 class="mb-0" th:text="*{name}"></h3>
+                                    <h3 class="mb-0" th:text="*{name.getRusName()}"></h3>
                                 </div>
                                 <div class="col-auto d-none d-lg-block">
                                     <img th:src="@{/references/spiders/image(pid=*{pid})}"
@@ -130,7 +130,7 @@
 
                                 <div class="col p-4 d-flex flex-column position-static">
                                     <strong class="d-inline-block mb-2 text-primary">Zoo</strong>
-                                    <h3 class="mb-0" th:text="*{name}"></h3>
+                                    <h3 class="mb-0" th:text="*{name.getRusName()}"></h3>
                                 </div>
                                 <div class="col-auto d-none d-lg-block">
                                     <img th:src="@{/references/lizards/image(pid=*{pid})}"
@@ -182,7 +182,7 @@
 
                                 <div class="col p-4 d-flex flex-column position-static">
                                     <strong class="d-inline-block mb-2 text-primary">Zoo</strong>
-                                    <h3 class="mb-0" th:text="*{name}"></h3>
+                                    <h3 class="mb-0" th:text="*{name.getRusName()}"></h3>
                                 </div>
                                 <div class="col-auto d-none d-lg-block">
                                     <img th:src="@{/references/scorpions/image(pid=*{pid})}"
@@ -235,7 +235,7 @@
 
                                 <div class="col p-4 d-flex flex-column position-static">
                                     <strong class="d-inline-block mb-2 text-primary">Zoo</strong>
-                                    <h3 class="mb-0" th:text="*{name}"></h3>
+                                    <h3 class="mb-0" th:text="*{name.getRusName()}"></h3>
                                 </div>
                                 <div class="col-auto d-none d-lg-block">
                                     <img th:src="@{/references/snakes/image(pid=*{pid})}"
